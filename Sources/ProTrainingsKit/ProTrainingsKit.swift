@@ -106,10 +106,8 @@ public class ProTrainingsClient {
     
     if let statusCode = response.getStatusCode() {
       print("Status Code: \(statusCode)")
-      if statusCode == 409 {
-        return(nil, ProTrainingsAPIError.userAlreadyExists)
-        
-      } else if statusCode == 200 {
+      switch(statusCode) {
+      case 200:
         var createUserResult: UserResult
         do {
           createUserResult = try JSONDecoder().decode(UserResult.self, from: data)
@@ -120,6 +118,12 @@ public class ProTrainingsClient {
         if let user = createUserResult.data {
           return (user, nil)
         }
+      case 409:
+        return(nil, ProTrainingsAPIError.userAlreadyExists)
+      case 422:
+        return(nil, ProTrainingsAPIError.invalidData)
+      default:
+        return (nil, ProTrainingsAPIError.unknown(code: -2))
       }
     }
     return (nil, ProTrainingsAPIError.unknown(code: -3))
