@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProTrainingsAPIError : Error, Equatable {
+public enum ProTrainingsAPIError : Error, Equatable {
   case userAlreadyExists
   case userNotFound
   case invalidData

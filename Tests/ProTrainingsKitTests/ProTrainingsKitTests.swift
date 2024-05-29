@@ -2,7 +2,7 @@ import XCTest
 @testable import ProTrainingsKit
 
 final class ProTrainingsKitTests: XCTestCase {
-  let apiKey = "5e3af4caea3cab08f1fe72429c218ec6"
+  let apiKey = "not-gonna-put-that-up-on-github"
   
   func testGetUsersReturnsSuccessful() async throws {
     

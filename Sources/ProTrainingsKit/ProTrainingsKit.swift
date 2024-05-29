@@ -4,7 +4,7 @@
 import Foundation
 
 @available(iOS 15, macOS 12.0, *)
-class ProTrainingsClient {
+public class ProTrainingsClient {
   var apiKey: String
   
   init(apiKey: String) {

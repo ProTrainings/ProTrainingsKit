@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Certification: Codable {
+public struct Certification: Codable {
   var id: UInt
   var name: String
   var certNumber: String?
@@ -23,7 +23,7 @@ struct Certification: Codable {
   }
 }
 
-struct User: Codable {
+public struct User: Codable {
   var id: UInt
   var type: String
   var firstName: String
