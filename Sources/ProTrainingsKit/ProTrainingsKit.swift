@@ -7,11 +7,11 @@ import Foundation
 public class ProTrainingsClient {
   var apiKey: String
   
-  init(apiKey: String) {
+  public init(apiKey: String) {
     self.apiKey = apiKey
   }
   
-  func getUsers() async -> [User]? {
+  public func getUsers() async -> [User]? {
     do {
       let url = URL(string: "https://www.protrainings.com/api/v1/users")!
       var request = URLRequest(url: url)
@@ -30,7 +30,7 @@ public class ProTrainingsClient {
     return nil
   }
   
-  func getUser(_ id: UInt) async -> User? {
+  public func getUser(_ id: UInt) async -> User? {
     do {
       let url = URL(string: "https://www.protrainings.com/api/v1/users/\(id)")!
       var request = URLRequest(url: url)
@@ -48,7 +48,7 @@ public class ProTrainingsClient {
     return nil
   }
   
-  func getMagicLink(login: String) async -> String? {
+  public func getMagicLink(login: String) async -> String? {
     guard login.isEmpty == false else {
       return nil
     }
@@ -77,7 +77,7 @@ public class ProTrainingsClient {
     return nil
   }
   
-  func createUser(login: String, email: String, lastName: String, firstName: String) async -> (User?, ProTrainingsAPIError?) {
+  public func createUser(login: String, email: String, lastName: String, firstName: String) async -> (User?, ProTrainingsAPIError?) {
     guard login.isEmpty == false && email.isEmpty == false else {
       return (nil, ProTrainingsAPIError.invalidData)
     }
