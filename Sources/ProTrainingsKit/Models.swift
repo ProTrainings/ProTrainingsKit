@@ -8,11 +8,11 @@
 import Foundation
 
 public struct Certification: Codable {
-  var id: UInt
-  var name: String
-  var certNumber: String?
-  var issueDate: String?
-  var expirationDate: String?
+  public var id: UInt
+  public var name: String
+  public var certNumber: String?
+  public var issueDate: String?
+  public var expirationDate: String?
   
   enum CodingKeys: String, CodingKey {
     case id
@@ -24,18 +24,18 @@ public struct Certification: Codable {
 }
 
 public struct User: Codable {
-  var id: UInt
-  var type: String
-  var firstName: String
-  var lastName: String
-  var email: String?
-  var login: String
-  var phone: String?
-  var createdAt: String
-  var currentCertifications: [Certification]?
-  var lastActive: String?
-  var link: String?
-  var magicLink: String?
+  public var id: UInt
+  public var type: String
+  public var firstName: String
+  public var lastName: String
+  public var email: String?
+  public var login: String
+  public var phone: String?
+  public var createdAt: String
+  public var currentCertifications: [Certification]?
+  public var lastActive: String?
+  public var link: String?
+  public var magicLink: String?
   
   enum CodingKeys: String, CodingKey {
     case id
@@ -54,7 +54,7 @@ public struct User: Codable {
 }
 
 struct MagicLink: Codable {
-  var link: String?
+  public var link: String?
 }
 
 struct Metadata: Codable {
